@@ -2,7 +2,8 @@
     <x-auth-card>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <x-slot name="title"> Login </x-slot>
+            <p class="text-center mb-10 text-2xl"> Login </p>
+            <x-slot name="logo"> <img src='{{ asset('/images/logo_black.png') }}'  class="w-16 md:w-32 lg:w-48" alt="logo"> </x-slot>
             <x-label for="email" class="mt-5">Email</x-label>
             <x-input type="email" name="email" required></x-input>
             <x-label for="password" class="mt-5">Password</x-label>
