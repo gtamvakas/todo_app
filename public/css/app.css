@@ -734,6 +734,9 @@ select {
 .w-16 {
   width: 4rem;
 }
+.w-14 {
+  width: 3.5rem;
+}
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1419,6 +1422,10 @@ select {
 
   .md\:w-32 {
     width: 8rem;
+  }
+
+  .md\:w-24 {
+    width: 6rem;
   }
 }
 @media (min-width: 1024px) {
