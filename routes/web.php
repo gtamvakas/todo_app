@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index']);
+
 Route::get('/main-page', function () {
     return view('main-page');
 })->middleware(['auth'])->name('main-page');
