@@ -9,7 +9,9 @@
             <x-label for="password" class="mt-5">Password</x-label>
             <x-input type="password" class="block w-full" name="password" required></x-input>
             <x-button class="mt-5"> LOGIN </x-button>
-            <a href="/register" class="ml-56 underline" >Don't have an account?</a>
+            <div class="flex items-center justify-end mt-4">
+            <a href="/register" class="underline" >Don't have an account?</a>
+            </div>
             <x-auth-validation-errors></x-auth-validation-errors>
         </form>
     </x-auth-card>
