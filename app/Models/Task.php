@@ -14,4 +14,12 @@ class Task extends Model
         'description',
         'done'
     ];
+
+
+    public function project(){
+        return $this->belongsTo(Project::class);
+    }
+
+
+
 }
