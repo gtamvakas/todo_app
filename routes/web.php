@@ -22,10 +22,15 @@ Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'
     ->middleware(['auth'])
     ->name('projects');
 
+Route::get('/projects/create',[\App\Http\Controllers\ProjectController::class, 'create'])
+    ->middleware('auth');
+
+Route::post('/projects/create', [\App\Http\Controllers\ProjectController::class, 'store'])
+    ->middleware('auth');
+
 Route::get('/projects/{project:slug}',[\App\Http\Controllers\ProjectController::class, 'show'])
 ->middleware('auth');
 
-Route::get('/projects/create',[\App\Http\Controllers\ProjectController::class, 'create'])
-->middleware('auth');
+
 
 require __DIR__.'/auth.php';
