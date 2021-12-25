@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        \Gate::define('owner', function (User $user, Project $project){
+           return $user->id === $project->user_id;
+        });
     }
 }
