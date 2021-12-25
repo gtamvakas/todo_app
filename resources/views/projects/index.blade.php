@@ -1,9 +1,15 @@
 <x-app-layout>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Projects') }}
         </h2>
     </x-slot>
+
+    <x-button class="flex justify-center rounded-md mt-5 shadow-sm border border-2 border-gray-900 hover:bg-white hover:text-black focus:outline-none mx-auto">
+        <a href="/projects/create">New Project</a>
+    </x-button>
+
     <!-- Pagination -->
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
