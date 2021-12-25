@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id()->unique();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

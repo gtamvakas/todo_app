@@ -82,6 +82,9 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link class="cursor-pointer">
+                    Profile
+                </x-responsive-nav-link>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
