@@ -22,4 +22,7 @@ Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'
     ->middleware(['auth'])
     ->name('projects');
 
+Route::get('/projects/{project:slug}',[\App\Http\Controllers\ProjectController::class, 'show'])
+->middleware('auth');
+
 require __DIR__.'/auth.php';
