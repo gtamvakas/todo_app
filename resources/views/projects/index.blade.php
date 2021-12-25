@@ -6,8 +6,9 @@
         </h2>
     </x-slot>
 
-    <x-button class="flex justify-center rounded-md mt-5 shadow-sm border border-2 border-gray-900 hover:bg-white hover:text-black focus:outline-none mx-auto">
-        <a href="/projects/create">New Project</a>
+    <x-button class="flex justify-center rounded-md mt-5 shadow-sm border border-2 border-gray-900 hover:bg-white hover:text-black focus:outline-none mx-auto"
+    onclick="window.location.href='/projects/create'">
+        New Project
     </x-button>
 
     <!-- Pagination -->
