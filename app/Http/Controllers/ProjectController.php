@@ -19,8 +19,11 @@ class ProjectController extends Controller
         ]);
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function show(Project $project){
-        $this->authorize('owner',[$project]);
+        $this->authorize('view-project',[$project]);
         return view('projects.show', [
             'project' => $project
         ]);

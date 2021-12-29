@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        \Gate::define('owner', function (User $user, Project $project){
+        \Gate::define('view-project', function (User $user, Project $project){
            return $user->id === $project->user_id;
         });
     }
