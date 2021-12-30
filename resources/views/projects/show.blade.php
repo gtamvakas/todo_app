@@ -4,7 +4,30 @@
             {{ __($project->name) }}
         </h2>
     </x-slot>
-    @foreach($project->tasks as $task)
-        {{ $task->name }}
-    @endforeach
+
+
+    <div class="w-full flex items-center justify-center">
+        <div class="xs:w-full sm:w-full md:w-full lg:w-1/3 xl:w-1/3 bg-white rounded-md mt-20 pb-8 px-4 shadow-lg flex flex-col">
+            <p class="font-semibold text-2xl mt-3 left-0 text-center mb-5">Tasks</p>
+            <div class="flex flex-col">
+                <div class="rounded shadow-md pl-3 pr-3 pt-2 border border-gray-400">
+                    <x-task-form>
+                        <x-slot name="project_id">
+                            <input type="hidden" name="project_id" value="{{ $project->id }}">
+                        </x-slot>
+                    </x-task-form>
+                </div>
+
+                @foreach($project->tasks as $task)
+                    <div class="flex mt-5 p-2 border border-gray-400 rounded-md">
+                        <p class="break-all rounded mr-10">{{ $task->name}}</p>
+                        <p class="ml-auto">haha</p>
+                    </div>
+
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+
 </x-app-layout>
