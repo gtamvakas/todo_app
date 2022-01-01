@@ -31,6 +31,7 @@ Route::post('/projects/create', [\App\Http\Controllers\ProjectController::class,
 Route::get('/projects/{project:slug}',[\App\Http\Controllers\ProjectController::class, 'show'])
 ->middleware('auth');
 
+
 Route::post('/tasks/create', [\App\Http\Controllers\TaskController::class, 'store']);
 
 
