@@ -5,7 +5,7 @@
             @if(!$task->done)
                 <p class="break-all rounded mr-10">{{ $task->name }}</p>
             @else
-                <p class="break-all rounded mr-10">{{ $task->name }}</p>
+                <p class="break-all rounded mr-10 text-gray-500 line-through">{{ $task->name }}</p>
             @endif
             <div class="ml-auto">
             <button class="mr-5" wire:click="completed">
