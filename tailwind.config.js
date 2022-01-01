@@ -8,11 +8,16 @@ module.exports = {
     ],
 
     theme: {
+    	screens: {
+    		'xs': '453px',
+    		...defaultTheme.screens,
+    	},
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        
     },
 
     plugins: [require('@tailwindcss/forms')],

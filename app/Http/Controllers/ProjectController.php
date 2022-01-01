@@ -7,6 +7,7 @@ use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ProjectController extends Controller
 {
@@ -19,8 +20,11 @@ class ProjectController extends Controller
         ]);
     }
 
+    /**
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function show(Project $project){
-        $this->authorize('owner',[$project]);
+        $this->authorize('view-project',[$project]);
         return view('projects.show', [
             'project' => $project
         ]);
@@ -37,13 +41,14 @@ class ProjectController extends Controller
             'slug' => Str::slug(request()->input('name'))
         ]));
 
-        return redirect('/projects');
+        return redirect('/projects')->with(['success' => 'Project created successfully!']);
     }
 
-    public function validateProject(): array
+    public function validateProject(?Project $project = null): array
     {
+        $project ??= new Project();
         return request()->validate([
-            'name' => ['required','max:255']
+            'name' => ['required','max:255', Rule::unique('projects','name')->ignore($project)]
         ]);
     }
 }

@@ -32,5 +32,7 @@ Route::get('/projects/{project:slug}',[\App\Http\Controllers\ProjectController::
 ->middleware('auth');
 
 
+Route::post('/tasks/create', [\App\Http\Controllers\TaskController::class, 'store']);
+
 
 require __DIR__.'/auth.php';
