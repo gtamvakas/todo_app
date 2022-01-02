@@ -13,10 +13,11 @@ class ProjectController extends Controller
 {
     public function index(){
 
+
         return view('projects.index', [
             'projects'=> Project::latest()
                 ->where('user_id', auth()->id())
-                ->paginate(10)
+                ->paginate(9)
         ]);
     }
 
@@ -24,7 +25,9 @@ class ProjectController extends Controller
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(Project $project){
+
         $this->authorize('view-project',[$project]);
+
         return view('projects.show', [
             'project' => $project
         ]);
@@ -44,6 +47,11 @@ class ProjectController extends Controller
         return redirect('/projects')->with(['success' => 'Project created successfully!']);
     }
 
+    public function destroy(Project $project){
+        $project->delete();
+
+        return back()->with('success', 'Projected Deleted.');
+    }
     public function validateProject(?Project $project = null): array
     {
         $project ??= new Project();
