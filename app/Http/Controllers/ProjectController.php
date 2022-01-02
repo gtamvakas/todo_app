@@ -13,6 +13,7 @@ class ProjectController extends Controller
 {
     public function index(){
 
+
         return view('projects.index', [
             'projects'=> Project::latest()
                 ->where('user_id', auth()->id())
@@ -46,6 +47,11 @@ class ProjectController extends Controller
         return redirect('/projects')->with(['success' => 'Project created successfully!']);
     }
 
+    public function destroy(Project $project){
+        $project->delete();
+
+        return back()->with('success', 'Projected Deleted.');
+    }
     public function validateProject(?Project $project = null): array
     {
         $project ??= new Project();
