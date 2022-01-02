@@ -7,7 +7,7 @@
 
 
     <div class="flex items-center justify-center">
-        <div class="xs:w-full sm:w-full md:w-2/3 lg:w-1/3 xl:w-1/3 bg-white rounded-md mt-20 pb-8 px-4 shadow-lg flex flex-col">
+        <div class="w-full xs:w-full sm:w-full md:w-2/3 lg:w-1/3 xl:w-1/3 bg-white rounded-md mt-20 pb-8 px-4 shadow-lg flex flex-col">
             <p class="font-semibold text-2xl mt-3 left-0 text-center mb-5">Tasks</p>
             <div class="flex flex-col h-128">
                 <div class="rounded shadow-md pl-3 pr-3 pt-2 border border-gray-400">
