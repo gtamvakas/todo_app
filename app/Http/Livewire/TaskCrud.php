@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Project;
 use App\Models\Task;
 use Livewire\Component;
 
 class TaskCrud extends Component
 {
     public Task $task;
+    public Project $project;
 
     public function render()
     {
@@ -19,7 +21,10 @@ class TaskCrud extends Component
         $this->task->delete();
     }
 
-    public function completed(){
+    public function done(){
         $this->task->update(['done' => true]);
+    }
+    public function undone(){
+        $this->task->update(['done' => false]);
     }
 }
