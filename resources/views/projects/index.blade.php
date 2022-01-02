@@ -36,7 +36,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit"  class="ml-auto mr-2 mt-2">
-                            <img src="{{ asset('images/delete-icon.png') }}" alt="delete-project" class="xs:w-5 sm:w-5 md:w-5 lg:w-5 xl:w-5">
+                            <img src="{{ asset('images/delete-icon.png') }}" alt="delete-project" class="xxs:w-5 xs:w-5 sm:w-5 md:w-5 lg:w-5 xl:w-5">
                         </button>
                     </form>
                 </div>
