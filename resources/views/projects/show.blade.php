@@ -19,14 +19,7 @@
                 </div>
 
                 @foreach($project->tasks as $task)
-{{--                    <div id="task-row">--}}
-{{--                        <div class="flex mt-5 p-2 border border-gray-400 rounded-md">--}}
-{{--                            <p class="break-all rounded mr-10">{{ $task->name}}</p>--}}
-{{--                            <livewire:delete-task :task="$task"/>--}}
-{{--                        </div>--}}
-
-{{--                    </div>--}}
-                    <livewire:task-crud :task="$task"/>
+                    <livewire:task-crud :task="$task" :project="$project"/>
                 @endforeach
 
             </div>
