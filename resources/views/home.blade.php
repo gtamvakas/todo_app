@@ -2,6 +2,8 @@
     <x-auth-card>
         <form method="POST" action="/login">
             @csrf
+            <h3 class="text-red-400 font-bold underline"> Do not input credentials you use in other places.</h3><br>
+            <h3 class="text-red-400"> This web application was created as a personal project.</h3><br>
             <p class="text-center mb-10 text-2xl"> Login </p>
             <x-slot name="logo"> <img src='{{ asset('/images/logo_black.png') }}'  class="w-48 md:w-45 lg:w-48" alt="logo"> </x-slot>
             <x-label for="email" class="mt-5">Email</x-label>
